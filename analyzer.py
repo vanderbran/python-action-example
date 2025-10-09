@@ -16,7 +16,7 @@ def parse_log_line(line):
     # Regex Pattern to match this string: 
     # ::ffff:10.122.144.51 - - [07/Oct/2025 12:02:27] "GET / HTTP/1.1" 200 -
     # NOTE: I did remove the last (\d+) which stores size 
-    pattern = r'(\S+) \S+ \S+ \[([^\]]+)\] "(\S+) (\S+) (\S+)" (\d+)'
+    pattern = r'(\S+) \S+ \S+ \[([^\]]+)\] "(\S+) (\S+) (\S+)" (\d+) '
     match = re.match(pattern, line)
 
     # If we match, create a dictionary based off of results 

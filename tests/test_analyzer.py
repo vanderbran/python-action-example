@@ -19,8 +19,8 @@ class TestLogAnalyzer(unittest.TestCase):
             f.write('192.168.1.1 - - [07/Oct/2025:11:48:00] "GET /error HTTP/1.1" 500 \n')
             f.write('192.168.1.2 - - [07/Oct/2025:11:48:01] "POST /fail HTTP/1.1" 404 \n')
         report = analyze_logs('temp.log')
-        self.assertNotEqual(report['errors_by_status']['500'], 1)
-        self.assertNotEqual(report['errors_by_ip']['192.168.1.1'], 1)
+        self.assertEqual(report['errors_by_status']['500'], 1)
+        self.assertEqual(report['errors_by_ip']['192.168.1.1'], 1)
 
 if __name__ == '__main__':
     unittest.main()

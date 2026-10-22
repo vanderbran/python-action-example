@@ -21,6 +21,9 @@ class TestLogAnalyzer(unittest.TestCase):
         report = analyze_logs('temp.log')
         self.assertEqual(report['errors_by_status']['500'], 1)
         self.assertEqual(report['errors_by_ip']['192.168.1.1'], 1)
+    
+    # def test_blow_socks(self):
+    #     self.assertEqual(9+10,21)
 
 if __name__ == '__main__':
     unittest.main()
